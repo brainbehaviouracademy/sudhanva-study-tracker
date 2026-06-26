@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brain Behaviour Academy | Grade 9 CBSE Study Tracker</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="brand">
+    <div>
+      <h1>Brain Behaviour <span class="acc">Academy</span></h1>
+      <p class="sub">Grade 9 &middot; CBSE Study Tracker</p>
+      <div class="student-name-wrap">
+        <label for="studentNameInput">Student:</label>
+        <input type="text" id="studentNameInput" placeholder="Enter student name">
+      </div>
+    </div>
+    <div class="badges">
+      <span class="badge">GRADE 9</span>
+      <span class="badge">CBSE</span>
+      <span class="badge">Science &middot; Social Science &middot; Maths</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="overview">
+    <div class="overview-top">
+      <h2 id="overviewHeading">Overall Syllabus Progress</h2>
+      <div class="overall-pct" id="overallPct">0%</div>
+    </div>
+    <div class="bar-track"><div class="bar-fill" id="overallBar" style="width:0%"></div></div>
+    <div class="subject-progress-grid" id="subjectProgressGrid"></div>
+  </div>
+
+  <div class="tabs" id="subjectTabs"></div>
+
+  <div class="toolbar">
+    <div class="left" id="toolbarLeftText" style="font-size:.85rem;color:var(--muted);">
+      Click a chapter to expand/collapse. Tick Study / Revise / Test as you complete each topic.
+    </div>
+    <div class="right" id="toolbarRight">
+      <label class="filter-toggle" id="importantFilterWrap">
+        <input type="checkbox" id="importantFilterToggle"> ⭐ Important only
+      </label>
+      <button class="action secondary" id="expandAllBtn">Expand All</button>
+      <button class="action secondary" id="collapseAllBtn">Collapse All</button>
+      <button class="action" id="addChapterBtn">+ Add Chapter</button>
+      <button class="action danger" id="resetBtn">Reset Progress</button>
+    </div>
+  </div>
+
+  <div id="treeRoot"></div>
+
+</div>
+
+<footer class="site-footer">Brain Behaviour Academy &mdash; Grade 9 CBSE Study Tracker. Your progress is saved automatically in this browser.</footer>
+
+<!-- Add/Edit Topic Modal -->
+<div class="modal-overlay" id="topicModal">
+  <div class="modal-box">
+    <h3 id="topicModalTitle">Add Topic</h3>
+    <input type="text" id="topicModalInput" placeholder="Topic name">
+    <div class="modal-actions">
+      <button class="action secondary" id="topicModalCancel">Cancel</button>
+      <button class="action" id="topicModalSave">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Chapter Modal -->
+<div class="modal-overlay" id="chapterModal">
+  <div class="modal-box">
+    <h3 id="chapterModalTitle">Add Chapter</h3>
+    <select id="chapterModalSubject">
+      <option value="Science">Science</option>
+      <option value="Social">Social Science</option>
+      <option value="Math">Maths</option>
+    </select>
+    <select id="chapterModalGroup" style="display:none;"></select>
+    <input type="text" id="chapterModalInput" placeholder="Chapter name">
+    <div class="modal-actions">
+      <button class="action secondary" id="chapterModalCancel">Cancel</button>
+      <button class="action" id="chapterModalSave">Save</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
